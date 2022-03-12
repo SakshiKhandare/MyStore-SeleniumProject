@@ -36,6 +36,13 @@ public class loginPage extends baseClass {
 		return new homePage();
 	}
 
+	public addressPage loginAfterCheckout(String email, String pswd) {
+		act.sendValue(emailField, email);
+		act.sendValue(password, pswd);
+		act.click(driver, signInBtn);
+		return new addressPage();
+	}
+
 	public accountCreationPage createNewAccount(String newEmail) {
 		act.sendValue(emailForNewAccount, newEmail);
 		act.click(driver, createNewAccount);
